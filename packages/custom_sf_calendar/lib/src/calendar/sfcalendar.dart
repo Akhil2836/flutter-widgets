@@ -4155,8 +4155,10 @@ class _SfCalendarState extends State<SfCalendar>
           _canScrollTimeSlotView = true;
         }
 
-        _fadeInController!.reset();
+        if( _fadeInController != null){
+          _fadeInController!.reset();
         _fadeInController!.forward();
+        }
         _agendaScrollController = ScrollController();
         SchedulerBinding.instance.addPostFrameCallback((_) {
           final Widget? currentWidget = _customScrollViewKey.currentWidget;
@@ -4209,8 +4211,10 @@ class _SfCalendarState extends State<SfCalendar>
             return;
           }
 
-          _fadeInController!.reset();
+          if(_fadeInController != null){
+            _fadeInController!.reset();
           _fadeInController!.forward();
+          }
           setState(() {
             _currentDate = _controller.displayDate!;
             _scheduleDisplayDate = _currentDate;
@@ -4240,8 +4244,10 @@ class _SfCalendarState extends State<SfCalendar>
             return;
           }
 
-          _fadeInController!.reset();
+         if(_fadeInController != null){
+            _fadeInController!.reset();
           _fadeInController!.forward();
+          }
           setState(() {
             _currentDate = _controller.displayDate!;
             _updateCurrentVisibleDates();
@@ -4271,8 +4277,10 @@ class _SfCalendarState extends State<SfCalendar>
             return;
           }
 
-          _fadeInController!.reset();
+          if(_fadeInController != null){
+            _fadeInController!.reset();
           _fadeInController!.forward();
+          }
           setState(() {
             _currentDate = _controller.displayDate!;
             _updateCurrentVisibleDates();
